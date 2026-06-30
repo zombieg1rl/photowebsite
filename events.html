@@ -11,8 +11,8 @@
   <div class="top-banner">
     <div class="banner-logo">
       <div class="logo-name">
-          <a href="index.html" class="logo">zombi3girrl</a>
-        </div>
+        <a href="index.html" class="logo">zombi3girrl</a>
+      </div>
     </div>
   </div>
 
@@ -27,13 +27,18 @@
   <div class="gallery-wrap">
     <div class="gallery-header widget">
       <div class="widget-title">EVENTS</div>
-     
       <a href="index.html" class="back-link">&larr; back home</a>
     </div>
     <div class="photo-grid">
-      <div class="photo-cell" style="--img:url('images/event1.jpg');"></div>
-      <div class="photo-cell" style="--img:url('images/event2.jpg');"></div>
-      <div class="photo-cell" style="--img:url('images/event3.jpg');"></div>
+      <figure class="photo-cell-wrap">
+        <img class="photo-cell lightbox-trigger" src="images/event1.jpg" loading="lazy" data-caption="" alt="event photo">
+      </figure>
+      <figure class="photo-cell-wrap">
+        <img class="photo-cell lightbox-trigger" src="images/event2.jpg" loading="lazy" data-caption="" alt="event photo">
+      </figure>
+      <figure class="photo-cell-wrap">
+        <img class="photo-cell lightbox-trigger" src="images/event3.jpg" loading="lazy" data-caption="" alt="event photo">
+      </figure>
     </div>
   </div>
 
@@ -41,5 +46,12 @@
     &copy; 2026 zombi3girrl — Las Vegas, NV — made with 💜
   </div>
 
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <script src="lightbox.js"></script>
 </body>
 </html>

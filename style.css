@@ -407,3 +407,117 @@ a:hover { text-decoration: underline; color: var(--pink-pale); }
   .photo-grid { grid-template-columns: 1fr; }
   .cat-bar    { font-size: 0.78rem; letter-spacing: 0.06em; }
 }
+
+/* =============================================
+   LIGHTBOX
+   ============================================= */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5,2,12,0.93);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 16px;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 82vh;
+  object-fit: contain;
+  border: 2px solid var(--pink);
+}
+
+.lightbox-caption {
+  margin-top: 10px;
+  color: var(--pink-pale);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  font-size: 2.2rem;
+  color: var(--white);
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+}
+
+.lightbox-close:hover { color: var(--pink-pale); }
+
+/* =============================================
+   GALLERY — mobile improvements
+   ============================================= */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.photo-cell-wrap {
+  position: relative;
+  background: var(--black);
+}
+
+.photo-cell {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+  border: 2px solid #1a1a1a;
+  filter: saturate(0.75);
+  transition: filter 0.3s, border-color 0.3s;
+  cursor: zoom-in;
+}
+
+.photo-cell:hover {
+  filter: saturate(1) brightness(1.05);
+  border-color: var(--pink);
+}
+
+.photo-caption {
+  font-size: 0.72rem;
+  color: #aaa;
+  padding: 4px 2px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+  }
+  .photo-cell { aspect-ratio: 1/1; }
+  .photo-caption { font-size: 0.65rem; }
+}
+
+.form-row--textarea {
+  align-items: flex-start;
+}
+
+.form-row--textarea label {
+  padding-top: 6px;
+}
+
+.booking-form textarea {
+  flex: 1;
+  background: #1a1a1a;
+  border: 1px solid var(--pink);
+  color: var(--white);
+  padding: 5px 8px;
+  font-size: 0.82rem;
+  outline: none;
+  resize: vertical;
+  min-height: 80px;
+  font-family: Arial, "Helvetica Neue", sans-serif;
+}
+
+.booking-form textarea::placeholder { color: #555; }
+.booking-form textarea:focus { border-color: var(--pink-pale); }
