@@ -521,3 +521,8 @@ a:hover { text-decoration: underline; color: var(--pink-pale); }
 
 .booking-form textarea::placeholder { color: #555; }
 .booking-form textarea:focus { border-color: var(--pink-pale); }
+
+.form-row.form-row--textarea label {
+  width: 70px;
+  padding-top: 6px;
+}
