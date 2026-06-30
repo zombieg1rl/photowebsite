@@ -113,8 +113,16 @@ a:hover { text-decoration: underline; color: var(--pink-pale); }
   max-width: 980px;
   margin: 10px auto;
   padding: 0 10px;
+  align-items: start;
+}
+.col-left {
+  display: flex;
+  flex-direction: column;
 }
 
+.col-left .widget:last-child {
+  flex: 1;
+}
 /* =============================================
    WIDGETS
    ============================================= */
@@ -198,46 +206,22 @@ a:hover { text-decoration: underline; color: var(--pink-pale); }
   border-bottom: 1px solid #2a2a2a;
 }
 
-.player {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #111;
-  padding: 10px;
+.spotify-embed {
+  display: block;
+  border: none;
 }
 
-.play-btn {
-  font-size: 1.4rem;
-  cursor: pointer;
-  flex-shrink: 0;
-  filter: grayscale(1) brightness(2);
+.spotify-embed-wrap {
+  border: 2px solid var(--pink);
+  padding: 4px;
+  background: var(--black);
 }
 
-.waveform {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  height: 32px;
+.widget-img {
+  width: 100%;
+  display: block;
+  background-color: var(--gray);
 }
-
-.wave-bar {
-  flex: 1;
-  background: var(--pink);
-  border-radius: 1px;
-  animation: pulse 1.2s ease-in-out infinite alternate;
-}
-
-.wave-bar:nth-child(2n) { animation-delay: 0.15s; }
-.wave-bar:nth-child(3n) { animation-delay: 0.30s; }
-.wave-bar:nth-child(4n) { animation-delay: 0.45s; }
-.wave-bar:nth-child(5n) { animation-delay: 0.60s; }
-
-@keyframes pulse {
-  from { opacity: 0.4; transform: scaleY(0.6); }
-  to   { opacity: 1;   transform: scaleY(1); }
-}
-
 /* =============================================
    BOOKING FORM
    ============================================= */
